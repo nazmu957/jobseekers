@@ -2,7 +2,7 @@
 
 const Topbar = () => {
     return (
-      <div>
+      <div className="border">
         <nav class="bg-white text-black p-4">
           <div class="container mx-auto flex justify-between items-center">
             <a href="#" class=" text-lg font-bold">

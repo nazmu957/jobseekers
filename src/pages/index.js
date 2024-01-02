@@ -18,10 +18,11 @@ const HomePage = ({}) => {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="https://i.ibb.co/Scywkr8/2461656.jpg" />
-      
       </Head>
-      <Topbar  />
-      <Searchbar />
+      <div className="bg-white">
+        <Topbar />
+        <Searchbar />
+      </div>
     </>
   );
 };
