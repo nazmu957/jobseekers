@@ -33,7 +33,7 @@ const Card = ({ name }) => {
             </button>
           </div>
           <div className="">
-            <button className="border bg-black text-white border-black lg:px-4 px-2 py-1 ms-2 text-center">
+            <button className="border bg-black text-white border-black lg:px-4 px-2 py-1 ms-2 me-2 text-center">
                More
             </button>
           </div>
