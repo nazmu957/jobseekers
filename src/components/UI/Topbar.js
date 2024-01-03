@@ -19,7 +19,7 @@ const Topbar = () => {
               <Link href="/">Home</Link>
               <Link href="/profile">Profile</Link>
               <Link href="/">Jobs</Link>
-              <a href="#">Others</a>
+              <Link href="/">Others</Link>
               <Link href="/dashboard">Dashboard</Link>
               {user?.uid ? (
                 <items>
