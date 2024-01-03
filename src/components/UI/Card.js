@@ -1,9 +1,8 @@
-
 import React from "react";
 
 const Card = ({ name }) => {
   return (
-    <div className="w-[50rem] mx-auto my-5 bg-white shadow-lg rounded-lg overflow-hidden">
+    <div className="lg:w-[50rem] mx-auto my-5 bg-white shadow-lg rounded-lg overflow-hidden">
       <div className="sm:flex sm:items-center px-6 py-4 ">
         <img
           className="h-[3rem]"
@@ -21,7 +20,7 @@ const Card = ({ name }) => {
       </div>
       <div className="border-2 m-3 text-black flex justify-between">
         <div className="p-3">
-          <h6 className="font-bold">Frontend Developer</h6>
+          <h6 className="font-bold ">Frontend Developer</h6>
           <span className="text-sm">$100k-$300k</span>
         </div>
         <div className="mt-4">
@@ -29,11 +28,13 @@ const Card = ({ name }) => {
         </div>
         <div className="flex mt-4">
           <div>
-            <button className="border border-black px-4 py-1">Save</button>
+            <button className="border border-black lg:px-4 px-2 py-1 ">
+              Save
+            </button>
           </div>
           <div className="">
-            <button className="border bg-black text-white border-black px-4 py-1 ms-2">
-              Learn more
+            <button className="border bg-black text-white border-black lg:px-4 px-2 py-1 ms-2 text-center">
+               More
             </button>
           </div>
         </div>

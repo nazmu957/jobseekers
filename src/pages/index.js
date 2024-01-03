@@ -1,12 +1,11 @@
 import Image from "next/image";
-import { Inter } from "next/font/google";
+
 import Head from "next/head";
 
 import Topbar from "@/components/UI/Topbar";
 import Searchbar from "@/components/UI/Searchbar";
 import Footer from "@/components/UI/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
 
 const HomePage = ({}) => {
   return (

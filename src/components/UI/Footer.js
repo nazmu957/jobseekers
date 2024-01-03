@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div className="bg-black ">
       <div className="flex justify-between">
-        <div className="text-start p-5 m-5">
+        <div className="text-start p-5 lg:m-5">
           <span>
             <b>SERVICE</b>
           </span>
@@ -15,7 +15,7 @@ const Footer = () => {
             <p className="py-1">Advertisement</p>
           </div>
         </div>
-        <div className="text-start p-5 m-5">
+        <div className="text-start p-5 lg:m-5">
           <span>
             <b>COMPANY</b>
           </span>
@@ -26,7 +26,7 @@ const Footer = () => {
             <p className="py-1">Press kit</p>
           </div>
         </div>
-        <div className="text-start p-5 m-5">
+        <div className="text-start p-5 lg:m-5">
           <span>
             <b className="">SERVICE</b>
           </span>
