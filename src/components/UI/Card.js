@@ -21,7 +21,7 @@ const Card = ({ name }) => {
       <div className="border-2 m-3 text-black flex justify-between">
         <div className="p-3">
           <h6 className="font-bold ">Frontend Developer</h6>
-          <span className="text-sm">$100k-$300k</span>
+          <span className="text-sm">$400k-$800k</span>
         </div>
         <div className="mt-4">
           <h6>United State. Remote only</h6>
