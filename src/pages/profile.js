@@ -122,7 +122,7 @@ const Profile = () => {
 
           <div className="mt-6">
             <label className="block text-sm font-medium text-gray-600">
-              Upload PDF File
+              Upload Your Resume
             </label>
             <input
               type="file"
