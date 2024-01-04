@@ -33,7 +33,7 @@ const Searchbar = () => {
             className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 transition duration-300 text-black"
           />
           <button className="absolute top-0 right-0 mt-3 mr-4 text-gray-600 focus:outline-none">
-            {/* Your SVG for the search icon */}
+          
           </button>
         </div>
       </div>
