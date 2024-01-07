@@ -1,7 +1,14 @@
 import Topbar from "@/components/UI/Topbar";
 import React, { useState } from "react";
 
+
 const ApplyJobPage = ({ jobs }) => {
+  console.log(jobs);
+
+
+
+
+
   const [applicantInfo, setApplicantInfo] = useState({
     name: "",
     email: "",
@@ -35,33 +42,36 @@ const ApplyJobPage = ({ jobs }) => {
   return (
     <div>
       <Topbar />
-      {/* Existing code ... */}
       <div className="lg:w-[50rem] mx-auto my-5 bg-white shadow-lg rounded-lg overflow-hidden">
-        <div className="lg:w-[50rem] mx-auto my-5 bg-white shadow-lg rounded-lg overflow-hidden">
-          <div className="sm:flex sm:items-center px-6 py-4 ">
-            <img className="h-[3rem]" src={jobs.image_url} alt="Profile" />
+        <div className="sm:flex sm:items-center px-6 py-4 ">
+          <img className="h-[3rem]" src={jobs?.image_url} alt="Profile" />
 
-            <div className="mt-4 sm:mt-0 sm:ml-4 text-center sm:text-left">
-              <p className="text-xl font-semibold text-gray-900">
-                {jobs?.title}
-              </p>
-              <p className="text-sm text-gray-600">Job Title</p>
-            </div>
-          </div>
-          <div className="text-black m-3 ms-5 text-center rounded-full  bg-red-100 w-[8rem] h-[2rem]">
-            <small className="">ACTIVELY HIRING</small>
-          </div>
-          <div className="border-2 m-3 text-black flex justify-between">
-            <div className="p-3">
-              <h6 className="font-bold ">{jobs?.title}</h6>
-              <span className="text-sm">{jobs?.salary}</span>
-              <p>{jobs?.description}</p>
-            </div>
-            <div className="mt-4">
-              <h6>{jobs?.location} : Remote only</h6>
-            </div>
+          <div className="mt-4 sm:mt-0 sm:ml-4 text-center sm:text-left">
+            <p className="text-xl font-semibold text-gray-900">{jobs?.title}</p>
+            <p className="text-sm text-gray-600">Job Title</p>
           </div>
         </div>
+        <div className="text-black m-3 ms-5 text-center rounded-full  bg-red-100 w-[8rem] h-[2rem]">
+          <small className="">ACTIVELY HIRING</small>
+        </div>
+        <div className="border-2 m-3 text-black flex justify-between">
+          <div className="p-3">
+            <h6 className="font-bold ">{jobs?.title}</h6>
+            <span className="text-sm">{jobs?.salary}</span>
+          </div>
+          <div className="mt-4">
+            <h6>{jobs?.location} : Remote only</h6>
+          </div>
+        </div>
+        <div className="flex justify-end">
+          <div className="text-black p-2">
+            <button className="p-2">Report</button>
+            <button className="p-2">Hide</button>
+          </div>
+        </div>
+      </div>
+      <div className="lg:w-[50rem] mx-auto my-5 bg-white shadow-lg rounded-lg overflow-hidden">
+        {/* Existing code ... */}
         <form onSubmit={handleSubmit}>
           <div className="m-3">
             <label className="block text-sm font-medium text-gray-700">
@@ -129,3 +139,49 @@ const ApplyJobPage = ({ jobs }) => {
 };
 
 export default ApplyJobPage;
+
+export const getStaticPaths = async () => {
+  try {
+    const res = await fetch("http://localhost:5000/jobs");
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch jobs");
+    }
+
+    const jobs = await res.json();
+
+    const paths = jobs?.data?.map((job) => ({
+      params: { jobsId: job.id },
+    }));
+
+    return { paths, fallback: false };
+  } catch (error) {
+    console.error("Error fetching jobs:", error.message);
+    return { paths: [], fallback: false };
+  }
+};
+
+export const getStaticProps = async (context) => {
+  try {
+    const { params } = context;
+    const res = await fetch(`http://localhost:5000/jobs/${params.jobsId}`);
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch job details");
+    }
+
+    const data = await res.json();
+
+    return {
+      props: {
+        jobs: data,
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching job details:", error.message);
+    return {
+      notFound: true,
+    };
+  }
+};
+

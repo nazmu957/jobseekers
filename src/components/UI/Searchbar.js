@@ -16,7 +16,7 @@ import Card from "./Card";
 const Searchbar = ({ allJobs }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const data = allJobs.data;
-  console.log(data);
+  // console.log(data);
 
 
   const handleInputChange = (e) => {
