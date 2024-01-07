@@ -6,8 +6,8 @@ import Topbar from "@/components/UI/Topbar";
 import Searchbar from "@/components/UI/Searchbar";
 import Footer from "@/components/UI/Footer";
 
+const HomePage = ({allJobs}) => {
 
-const HomePage = ({}) => {
   return (
     <>
       <Head>
@@ -21,7 +21,7 @@ const HomePage = ({}) => {
       </Head>
       <div className="bg-white">
         <Topbar />
-        <Searchbar />
+        <Searchbar allJobs={allJobs}/>
         <Footer />
       </div>
     </>
@@ -29,5 +29,31 @@ const HomePage = ({}) => {
 };
 export default HomePage;
 
+import axios from "axios"; // Import axios
 
+export const getStaticProps = async () => {
+  try {
+    const apiUrl1 = "http://localhost:5000/jobs";
+
+    const [response1] = await Promise.all([axios.get(apiUrl1)]);
+
+    console.log(response1);
+
+    return {
+      props: {
+        allJobs: response1.data,
+      },
+      revalidate: 10,
+    };
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    // Handle error as needed
+    return {
+      props: {
+        allJobs: [],
+      },
+      revalidate: 10,
+    };
+  }
+};
 
