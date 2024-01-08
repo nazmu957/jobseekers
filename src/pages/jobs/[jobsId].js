@@ -1,3 +1,4 @@
+import Footer from "@/components/UI/Footer";
 import Topbar from "@/components/UI/Topbar";
 import React, { useState } from "react";
 
@@ -29,6 +30,9 @@ const ApplyJobPage = ({ jobs }) => {
 
     // You can perform additional validation and submit the data to your backend
     console.log("Applicant Information:", applicantInfo);
+
+    // Show an alert after successful submission
+    alert("Application submitted successfully!");
 
     // Clear the form after submission
     setApplicantInfo({
@@ -71,69 +75,72 @@ const ApplyJobPage = ({ jobs }) => {
         </div>
       </div>
       <div className="lg:w-[50rem] mx-auto my-5 bg-white shadow-lg rounded-lg overflow-hidden">
-        {/* Existing code ... */}
-        <form onSubmit={handleSubmit}>
-          <div className="m-3">
-            <label className="block text-sm font-medium text-gray-700">
-              Name:
-            </label>
-            <input
-              type="text"
-              name="name"
-              value={applicantInfo.name}
-              onChange={handleInputChange}
-              className="mt-1 p-2 border rounded-md w-full"
-              required
-            />
-          </div>
-          <div className="m-3">
-            <label className="block text-sm font-medium text-gray-700">
-              Email:
-            </label>
-            <input
-              type="email"
-              name="email"
-              value={applicantInfo.email}
-              onChange={handleInputChange}
-              className="mt-1 p-2 border rounded-md w-full"
-              required
-            />
-          </div>
-          <div className="m-3">
-            <label className="block text-sm font-medium text-gray-700">
-              Resume URL:
-            </label>
-            <input
-              type="text"
-              name="resume"
-              value={applicantInfo.resume}
-              onChange={handleInputChange}
-              className="mt-1 p-2 border rounded-md w-full"
-              required
-            />
-          </div>
-          <div className="m-3">
-            <label className="block text-sm font-medium text-gray-700">
-              Cover Letter:
-            </label>
-            <textarea
-              name="coverLetter"
-              value={applicantInfo.coverLetter}
-              onChange={handleInputChange}
-              className="mt-1 p-2 border rounded-md w-full"
-              required
-            />
-          </div>
-          <div className="m-3 text-center">
-            <button
-              type="submit"
-              className="px-4 py-2 bg-blue-500 text-white rounded-md"
-            >
-              Submit Application
-            </button>
-          </div>
-        </form>
+        <div className="py-3 border-2">
+          <h1 className="text-center font-bold py-2">Apply Form</h1>
+          <form onSubmit={handleSubmit}>
+            <div className="m-3">
+              <label className="block text-sm font-medium text-gray-700">
+                Name:
+              </label>
+              <input
+                type="text"
+                name="name"
+                value={applicantInfo.name}
+                onChange={handleInputChange}
+                className="mt-1 p-2 border rounded-md w-full"
+                required
+              />
+            </div>
+            <div className="m-3">
+              <label className="block text-sm font-medium text-gray-700">
+                Email:
+              </label>
+              <input
+                type="email"
+                name="email"
+                value={applicantInfo.email}
+                onChange={handleInputChange}
+                className="mt-1 p-2 border rounded-md w-full"
+                required
+              />
+            </div>
+            <div className="m-3">
+              <label className="block text-sm font-medium text-gray-700">
+                Resume URL:
+              </label>
+              <input
+                type="text"
+                name="resume"
+                value={applicantInfo.resume}
+                onChange={handleInputChange}
+                className="mt-1 p-2 border rounded-md w-full"
+                required
+              />
+            </div>
+            <div className="m-3">
+              <label className="block text-sm font-medium text-gray-700">
+                Cover Letter:
+              </label>
+              <textarea
+                name="coverLetter"
+                value={applicantInfo.coverLetter}
+                onChange={handleInputChange}
+                className="mt-1 p-2 border rounded-md w-full"
+                required
+              />
+            </div>
+            <div className="m-3 text-center">
+              <button
+                type="submit"
+                className="px-4 py-2 bg-blue-500 text-white rounded-md"
+              >
+                Submit Application
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
+      <Footer />
     </div>
   );
 };

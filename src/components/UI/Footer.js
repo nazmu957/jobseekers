@@ -2,14 +2,14 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="bg-black ">
-      <div className="flex justify-between">
+    <div className="bg-black text-white ">
+      <div className="flex justify-between ">
         <div className="text-start p-5 lg:m-5">
           <span>
             <b>SERVICE</b>
           </span>
-          <div className="mt-2">
-            <p className="py-1">Design</p>
+          <div className="mt-2 ">
+            <p className="py-1 ">Design</p>
             <p className="py-1">Marketing</p>
             <p className="py-1">Branding</p>
             <p className="py-1">Advertisement</p>
