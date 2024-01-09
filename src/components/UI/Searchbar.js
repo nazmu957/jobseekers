@@ -18,7 +18,7 @@ const Searchbar = ({ allJobs }) => {
   );
 
   return (
-    <div className="">
+    <div className="lg:mx-[15rem]">
       <div
         style={{
           backgroundImage:
@@ -28,8 +28,13 @@ const Searchbar = ({ allJobs }) => {
           height: "25rem",
         }}
       >
-        <div className="lg:px-[35rem] lg:pt-[8rem]  ">
-          <h1 className="font-semibold text-3xl text-[#1E2761]">
+        <div className="text-center">
+          <h1 className="font-semibold text-4xl pt-[4rem]  text-[#1E2761] font-serif">
+            Empower Your Ambitions, Explore Opportunities!
+          </h1>
+        </div>
+        <div className="lg:px-[25rem] lg:pt-[0rem] font-serif ms-8 ">
+          <h1 className="font-semibold text-2xl text-[#1E2761] my-5">
             Find your dream job
           </h1>
           <div

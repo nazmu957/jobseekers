@@ -8,7 +8,7 @@ const Topbar = () => {
   const { user, logOut } = useContext(AuthContext);
     return (
       <div className="border">
-        <div className="bg-red h-7"></div>
+        {/* <div className="h-7"></div> */}
         <nav class="bg-[#1E2761] text-white p-4">
           <div class="container mx-auto flex justify-between items-center">
             <a href="#" class=" text-2xl font-serif font-semibold">

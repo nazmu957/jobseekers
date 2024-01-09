@@ -47,14 +47,14 @@ const RegistrationForm = () => {
       <div className="max-w-md w-full bg-white space-y-8">
         <div className="bg-base-100 p-8 rounded shadow-md">
           <form onSubmit={handleSignUp}>
-            <h1 className="text-2xl font-bold text-center mb-4">
+            <h1 className="text-2xl font-bold text-center mb-4 text-[#1F2761]">
               Registration
             </h1>
 
             <div className="mb-4">
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-600"
+                className="block text-sm font-medium text-[#1F2761]"
               >
                 Email
               </label>
@@ -71,7 +71,7 @@ const RegistrationForm = () => {
             <div className="mb-4">
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-gray-600"
+                className="block text-sm font-medium text-[#1F2761]"
               >
                 Password
               </label>
@@ -88,7 +88,7 @@ const RegistrationForm = () => {
             <div className="mb-4">
               <label
                 htmlFor="confirm"
-                className="block text-sm font-medium text-gray-600"
+                className="block text-sm font-medium text-[#1F2761]"
               >
                 Confirm Password
               </label>
@@ -119,7 +119,7 @@ const RegistrationForm = () => {
 
             <div className="mt-6">
               <button
-                className="bg-[#164080] hover:bg-red-300 py-2 px-4 w-full rounded-md text-white"
+                className="bg-[#1F2761] hover:bg-red-300 py-2 px-4 w-full rounded-md text-white"
                 type="submit"
               >
                 Sign Up

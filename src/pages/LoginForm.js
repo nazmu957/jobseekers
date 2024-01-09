@@ -44,15 +44,17 @@ const LoginForm = () => {
       <Head>
         <title>Login</title>
       </Head>
-      <div className="max-w-md w-full space-y-8">
-        <div className="bg-white p-8 rounded shadow-md">
-          <h1 className="text-2xl font-bold text-center mb-4">Login</h1>
+      <div className="max-w-md w-full space-y-9">
+        <div className="bg-white p-8 h-[30rem] rounded shadow-md">
+          <h1 className="text-2xl text-[#1F2761] font-bold text-center mb-4">
+            Login
+          </h1>
 
           <form onSubmit={handleLogin}>
             <div className="mb-4">
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-600"
+                className="block text-sm font-medium text-[#1F2761]"
               >
                 Email
               </label>
@@ -68,7 +70,7 @@ const LoginForm = () => {
             <div className="mb-4">
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-gray-600"
+                className="block text-sm font-medium text-[#1F2761]"
               >
                 Password
               </label>
@@ -83,7 +85,7 @@ const LoginForm = () => {
 
             <div className="flex items-center justify-between">
               <button
-                className="bg-[#164080] hover:bg-gray-800 py-2 px-4 w-full rounded-md text-white"
+                className="bg-[#1F2761] hover:bg-gray-800 py-2 px-4 w-full rounded-md text-white mt-4"
                 type="submit"
               >
                 Sign In
@@ -94,7 +96,7 @@ const LoginForm = () => {
 
             <div className="flex justify-center mt-6">
               <button
-                className="bg-[#164080] hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-md"
+                className="bg-[#1F2761] hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-md mt-3"
                 onClick={handleGoogleSignIn}
               >
                 Sign In with Google
@@ -104,7 +106,7 @@ const LoginForm = () => {
 
           <p className="text-center text-sm mt-4">
             New in our site?{" "}
-            <Link href="/RegistrationForm" className="text-blue-500 font-bold">
+            <Link href="/RegistrationForm" className="text-[#1F2761] font-bold">
               Create Account
             </Link>
           </p>

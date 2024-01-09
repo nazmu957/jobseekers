@@ -75,7 +75,7 @@ const ApplyJobPage = ({ jobs }) => {
       </div>
       <div className="lg:w-[50rem] mx-auto my-5 bg-white shadow-lg rounded-lg overflow-hidden">
         <div className="py-3 border-2">
-          <h1 className="text-center font-bold py-2">Apply Form</h1>
+          <h1 className="text-center font-bold py-2 text-2xl">Apply Form</h1>
           <form onSubmit={handleSubmit}>
             <div className="m-3">
               <label className="block text-sm font-medium text-gray-700">
@@ -131,7 +131,7 @@ const ApplyJobPage = ({ jobs }) => {
             <div className="m-3 text-center">
               <button
                 type="submit"
-                className="px-4 py-2 bg-blue-500 text-white rounded-md"
+                className="px-4 py-2 bg-[#1F2761] text-white rounded-md"
               >
                 Submit Application
               </button>

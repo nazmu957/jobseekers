@@ -22,6 +22,8 @@ const HomePage = ({allJobs}) => {
       <div className="bg-white">
         <Topbar />
         <Searchbar allJobs={allJobs}/>
+        <Slogan />
+        <Partners />
         <Footer />
       </div>
     </>
@@ -30,6 +32,8 @@ const HomePage = ({allJobs}) => {
 export default HomePage;
 
 import axios from "axios"; // Import axios
+import Slogan from "@/components/UI/Slogan";
+import Partners from "@/components/UI/Partners";
 
 export const getStaticProps = async () => {
   try {
