@@ -6,11 +6,7 @@ import React, { useState } from "react";
 const ApplyJobPage = ({ jobs }) => {
   console.log(jobs);
 
-
-
-
-
-  const [applicantInfo, setApplicantInfo] = useState({
+ const [applicantInfo, setApplicantInfo] = useState({
     name: "",
     email: "",
     resume: "",
@@ -61,11 +57,14 @@ const ApplyJobPage = ({ jobs }) => {
         <div className="border-2 m-3 text-black flex justify-between">
           <div className="p-3">
             <h6 className="font-bold ">{jobs?.title}</h6>
-            <span className="text-sm">{jobs?.salary}</span>
+            <span className="text-sm">Salary: ${jobs?.salary}</span>
           </div>
-          <div className="mt-4">
-            <h6>{jobs?.location} : Remote only</h6>
+          <div className="mt-4 p-2">
+            <h6>Location:{jobs?.location} : Remote only</h6>
           </div>
+        </div>
+        <div className="p-4">
+          <p>{jobs.description}</p>
         </div>
         <div className="flex justify-end">
           <div className="text-black p-2">

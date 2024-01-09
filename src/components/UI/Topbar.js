@@ -8,24 +8,32 @@ const Topbar = () => {
   const { user, logOut } = useContext(AuthContext);
     return (
       <div className="border">
-        <nav class="bg-white text-black p-4">
+        <div className="bg-red h-7"></div>
+        <nav class="bg-[#1E2761] text-white p-4">
           <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class=" text-lg font-bold">
+            <a href="#" class=" text-2xl font-serif font-semibold">
               JobSeekers
             </a>
 
-            <div class="space-x-4">
+            <div class="space-x-4 font-serif">
               <Link href="/">Home</Link>
               <Link href="/profile">Profile</Link>
               <Link href="/">Jobs</Link>
               <Link href="/">Others</Link>
               <Link href="/dashboard">Dashboard</Link>
-             
+
               <>
                 {user?.uid ? (
-                  <button className="text-red-500" onClick={logOut}>Logout</button>
+                  <button
+                    className="text-red-500 font-semibold"
+                    onClick={logOut}
+                  >
+                    Logout
+                  </button>
                 ) : (
-                  <Link className="text-blue-500" href="/LoginForm">Login</Link>
+                  <Link className="text-white font-semibold" href="/LoginForm">
+                    Login
+                  </Link>
                 )}
               </>
             </div>

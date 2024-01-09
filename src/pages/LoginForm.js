@@ -3,13 +3,11 @@ import { useRouter } from "next/router";
 import { AuthContext } from "../contexts/UserContext";
 import { GoogleAuthProvider } from "firebase/auth";
 import Link from "next/link";
-
 import Head from "next/head";
 
 const LoginForm = () => {
-  const { providerLogin } = useContext(AuthContext);
-  const { signIn } = useContext(AuthContext);
-  const [error, setError] = useState(null); // State variable to hold the error message
+  const { providerLogin, signIn } = useContext(AuthContext);
+  const [error, setError] = useState(null);
   const router = useRouter();
   const googleProvider = new GoogleAuthProvider();
 
@@ -37,74 +35,79 @@ const LoginForm = () => {
       router.push("/");
     } catch (error) {
       console.error("Login error:", error);
-      setError("Invalid email or password. Please try again."); // Set the error message
+      setError("Invalid email or password. Please try again.");
     }
   };
+
   return (
-    <div className="hero">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <Head>
         <title>Login</title>
       </Head>
-      <div className="hero-content text-black bg-red-100 flex-col my-5 md:my-10 lg:my-20">
-        <div className="card flex-shrink-0 w-full max-w-md mx-auto shadow-2xl bg-white">
-          <form onSubmit={handleLogin} className="card-body p-6">
-            <h1 className="text-center font-bold text-2xl mb-4">Login</h1>
+      <div className="max-w-md w-full space-y-8">
+        <div className="bg-white p-8 rounded shadow-md">
+          <h1 className="text-2xl font-bold text-center mb-4">Login</h1>
 
-            <div className="form-control mb-4">
-              <label className="label">
-                <span className="label-text">Email</span>
+          <form onSubmit={handleLogin}>
+            <div className="mb-4">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-600"
+              >
+                Email
               </label>
               <input
                 type="text"
                 name="email"
-                placeholder="Email"
-                className="input input-bordered w-full"
+                id="email"
+                placeholder="Your email"
+                className="mt-1 p-2 w-full border rounded-md"
               />
             </div>
-            <div className="form-control mb-4">
-              <label className="label">
-                <span className="label-text">Password</span>
+
+            <div className="mb-4">
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-gray-600"
+              >
+                Password
               </label>
               <input
                 type="password"
                 name="password"
-                placeholder="Password"
-                className="input input-bordered w-full"
+                id="password"
+                placeholder="Your password"
+                className="mt-1 p-2 w-full border rounded-md"
               />
-              <label className="label">
-                <p className="text-sm py-2">
-                  New in our site?
-                  <Link
-                    href={"/RegistrationForm"}
-                    className="label-text-alt link link-hover text-sm text-blue-500 font-bold"
-                  >
-                    Create Account
-                  </Link>
-                </p>
-              </label>
             </div>
 
-            <div className="form-control mt-6">
-              {error && <div className="text-red-500">{error}</div>}{" "}
-              {/* Display error message */}
+            <div className="flex items-center justify-between">
               <button
-                className="bg-red-200 mt-5 w-full"
+                className="bg-[#164080] hover:bg-gray-800 py-2 px-4 w-full rounded-md text-white"
                 type="submit"
-                value="Sign In"
               >
                 Sign In
               </button>
-              <div className="flex justify-center py-3">
-                <button onClick={handleGoogleSignIn}>
-                  <img
-                    className="w-[2.5rem]"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLlO-Sryy8KGEGSjbmE4VTP3GLfOv3EDHYyrwrD_bMBw&s"
-                    alt=""
-                  />
-                </button>
-              </div>
+            </div>
+
+            {error && <div className="text-red-500 mt-4">{error}</div>}
+
+            <div className="flex justify-center mt-6">
+              <button
+                className="bg-[#164080] hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-md"
+                onClick={handleGoogleSignIn}
+              >
+                Sign In with Google
+              </button>
             </div>
           </form>
+
+          <p className="text-center text-sm mt-4">
+            New in our site?{" "}
+            <Link href="/RegistrationForm" className="text-blue-500 font-bold">
+              Create Account
+            </Link>
+          </p>
         </div>
       </div>
     </div>
