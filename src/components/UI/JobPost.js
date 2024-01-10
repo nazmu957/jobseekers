@@ -8,6 +8,7 @@ import {
   FaCalendarAlt,
 } from "react-icons/fa";
 import ReportCard from "./Report";
+import Link from "next/link";
 
 const JobPost = () => {
   const [clickedApplicant, setClickedApplicant] = useState(null);
@@ -82,7 +83,7 @@ const JobPost = () => {
   const handleAddProduct = (event) => {
     event.preventDefault();
 
-    fetch("http://localhost:5000/jobs", {
+    fetch("https://job-server-rosy.vercel.app/jobs", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -108,7 +109,7 @@ const JobPost = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 text-black">
+    <div className=" bg-gray-100 text-black">
       <div className="container   grid grid-cols-1 md:grid-cols-4">
         {/* Sidebar */}
         <div className="md:col-span-1">
@@ -120,12 +121,20 @@ const JobPost = () => {
             {/* Menu */}
             <ul className="space-y-2">
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="dashboard"
                   className="flex items-center text-white hover:underline"
                 >
                   <FaHome className="mr-2" /> Dashboard
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/dashboard_post"
+                  className="flex items-center text-white hover:underline"
+                >
+                  <FaClipboardList className="mr-2" /> Posts
+                </Link>
               </li>
               <li>
                 <a
@@ -151,14 +160,7 @@ const JobPost = () => {
                   <FaComment className="mr-2" /> Chat
                 </a>
               </li>
-              <li>
-                <a
-                  href="#"
-                  className="flex items-center text-white hover:underline"
-                >
-                  <FaClipboardList className="mr-2" /> Posts
-                </a>
-              </li>
+
               <li>
                 <a
                   href="#"
@@ -174,78 +176,87 @@ const JobPost = () => {
         </div>
 
         {/* Main Content */}
-        <div className="md:col-span-3">
+        <div className="md:col-span-3 ">
           <h1 className="text-2xl font-bold mb-8 text-[#1F2761] ms-8 mt-3">
             Post Job
           </h1>
-          <div className="bg-red-100 py-[4rem]">
+          <div className="bg-white py-[4rem] ms-[5rem] rounded-lg">
             <div>
-              <h2 className="font-bold text-2xl py-3">Job Added</h2>
-              <form onSubmit={handleAddProduct}>
-                <input
-                  className="border px-3 p-[.2rem] my-[.3rem] rounded"
-                  onBlur={handleInputBlur}
-                  type="number"
-                  placeholder="Job id"
-                  required
-                  name="id"
-                  id=""
-                />
-                <br />
-                <input
-                  className="border px-3 p-[.2rem] my-[.3rem] rounded"
-                  onBlur={handleInputBlur}
-                  type="text"
-                  placeholder="Company Logo Link"
-                  required
-                  name="image_url"
-                  id=""
-                />
-                <br />
-                <input
-                  className="border px-3 p-[.2rem]  my-[.3rem] rounded"
-                  onBlur={handleInputBlur}
-                  type="text"
-                  placeholder="Salary"
-                  required
-                  name="salary"
-                  id=""
-                />
-                <br />
-                <input
-                  className="border px-3 p-[.2rem]  my-[.3rem] rounded"
-                  onBlur={handleInputBlur}
-                  type="text"
-                  placeholder="availability"
-                  required
-                  name="availability"
-                  id=""
-                />
-                <br />
-                <input
-                  className="border px-3 p-[.2rem]  my-[.3rem] rounded"
-                  onBlur={handleInputBlur}
-                  type="text"
-                  placeholder="Location"
-                  required
-                  name="location"
-                  id=""
-                />
-                <br />
-                <input
-                  className="border px-3 p-[.2rem]  my-[.3rem] rounded"
-                  onBlur={handleInputBlur}
-                  type="text"
-                  placeholder="Title"
-                  required
-                  name="title"
-                  id=""
-                />
-                <br />
-                <button className="btn btn-sm mt-3" type="submit">
-                  Post Job
-                </button>
-              </form>
+              <h2 className="font-bold text-2xl text-[#1F2761] py-3 text-center">
+                Add a new job
+              </h2>
+              <div className="flex justify-center">
+                <form onSubmit={handleAddProduct}>
+                  <input
+                    className="border border-[#363f80] px-3 lg:px-[5rem] p-[.2rem] my-[.3rem] rounded "
+                    onBlur={handleInputBlur}
+                    type="number"
+                    placeholder="Job id"
+                    required
+                    name="id"
+                    id=""
+                  />
+                  <br />
+                  <input
+                    className="border border-[#363f80] px-3 lg:px-[5rem] p-[.2rem] my-[.3rem] rounded"
+                    onBlur={handleInputBlur}
+                    type="text"
+                    placeholder="Company Logo Link"
+                    required
+                    name="image_url"
+                    id=""
+                  />
+                  <br />
+                  <input
+                    className="border border-[#363f80] px-3 p-[.2rem] lg:px-[5rem]  my-[.3rem] rounded"
+                    onBlur={handleInputBlur}
+                    type="text"
+                    placeholder="Salary"
+                    required
+                    name="salary"
+                    id=""
+                  />
+                  <br />
+                  <input
+                    className="border border-[#363f80] px-3 p-[.2rem] lg:px-[5rem] my-[.3rem] rounded"
+                    onBlur={handleInputBlur}
+                    type="text"
+                    placeholder="availability"
+                    required
+                    name="availability"
+                    id=""
+                  />
+                  <br />
+                  <input
+                    className="border border-[#363f80] px-3 p-[.2rem] lg:px-[5rem]  my-[.3rem] rounded"
+                    onBlur={handleInputBlur}
+                    type="text"
+                    placeholder="Location"
+                    required
+                    name="location"
+                    id=""
+                  />
+                  <br />
+                  <input
+                    className="border border-[#363f80] px-3 p-[.2rem] lg:px-[5rem] my-[.3rem] rounded"
+                    onBlur={handleInputBlur}
+                    type="text"
+                    placeholder="Title"
+                    required
+                    name="title"
+                    id=""
+                  />
+                  <br />
+                  <div className="flex justify-center">
+                    <button
+                      className="btn rounded  btn-sm mt-3 bg-[#1F2761] text-white px-4 py-2 "
+                      type="submit"
+                    >
+                      Post Job
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>

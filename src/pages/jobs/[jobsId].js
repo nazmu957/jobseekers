@@ -147,7 +147,7 @@ export default ApplyJobPage;
 
 export const getStaticPaths = async () => {
   try {
-    const res = await fetch("http://localhost:5000/jobs");
+    const res = await fetch("https://job-server-rosy.vercel.app/jobs");
 
     if (!res.ok) {
       throw new Error("Failed to fetch jobs");
@@ -169,7 +169,9 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
   try {
     const { params } = context;
-    const res = await fetch(`http://localhost:5000/jobs/${params.jobsId}`);
+    const res = await fetch(
+      `https://job-server-rosy.vercel.app/jobs/${params.jobsId}`
+    );
 
     if (!res.ok) {
       throw new Error("Failed to fetch job details");

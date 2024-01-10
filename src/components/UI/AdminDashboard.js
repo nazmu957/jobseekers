@@ -8,6 +8,7 @@ import {
   FaCalendarAlt,
 } from "react-icons/fa";
 import ReportCard from "./Report";
+import Link from "next/link";
 const AdminDashboard = () => {
   const [clickedApplicant, setClickedApplicant] = useState(null);
 
@@ -90,12 +91,20 @@ const AdminDashboard = () => {
             {/* Menu */}
             <ul className="space-y-2">
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/dashboard"
                   className="flex items-center text-white hover:underline"
                 >
                   <FaHome className="mr-2" /> Dashboard
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/dashboard_post"
+                  className="flex items-center text-white hover:underline"
+                >
+                  <FaClipboardList className="mr-2" /> Posts
+                </Link>
               </li>
               <li>
                 <a
@@ -121,14 +130,7 @@ const AdminDashboard = () => {
                   <FaComment className="mr-2" /> Chat
                 </a>
               </li>
-              <li>
-                <a
-                  href="#"
-                  className="flex items-center text-white hover:underline"
-                >
-                  <FaClipboardList className="mr-2" /> Posts
-                </a>
-              </li>
+              
               <li>
                 <a
                   href="#"

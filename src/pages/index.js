@@ -36,7 +36,7 @@ import Partners from "@/components/UI/Partners";
 
 export const getStaticProps = async () => {
   try {
-    const apiUrl1 = "http://localhost:5000/jobs";
+    const apiUrl1 = "https://job-server-rosy.vercel.app/jobs";
 
     const [response1] = await Promise.all([axios.get(apiUrl1)]);
 

@@ -23,7 +23,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="w-full lg:w-1/4 text-start p-4 lg:m-5">
-          <span className="font-bold text-lg mb-4 block">SERVICE</span>
+          <span className="font-bold text-lg mb-4 block">Policy</span>
           <div className="mt-2">
             <p className="py-1 text-gray-300">Terms of use</p>
             <p className="py-1 text-gray-300">Privacy policy</p>

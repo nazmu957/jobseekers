@@ -12,7 +12,7 @@ const Searchbar = ({ allJobs }) => {
 
   const filteredData = data.filter(
     (item) =>
-      item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item?.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.salary.includes(searchTerm)
   );
@@ -232,11 +232,11 @@ const Searchbar = ({ allJobs }) => {
             {filteredData.map((item, index) => (
               <Card
                 key={index}
-                name={item.title}
-                location={item.location}
-                salary={item.salary}
-                image_url={item.image_url}
-                id={item.id}
+                name={item?.name}
+                location={item?.location}
+                salary={item?.salary}
+                image_url={item?.image_url}
+                id={item?.id}
               />
             ))}
           </div>
