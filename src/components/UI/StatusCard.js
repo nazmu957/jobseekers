@@ -73,7 +73,9 @@ const StatsCard = () => {
   return (
     <div className="container mx-auto mt-8 p-8 bg-white rounded-lg shadow-lg">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-teal-600">Total Application Response Rate</h2>
+        <h2 className="text-3xl font-bold text-[#1F2761]">
+          Total Application Response Rate
+        </h2>
       </div>
       <div className="max-w-lg mx-auto">
         <BarChart data={chartData} options={chartOptions} />

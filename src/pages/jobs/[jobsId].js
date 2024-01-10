@@ -2,11 +2,10 @@ import Footer from "@/components/UI/Footer";
 import Topbar from "@/components/UI/Topbar";
 import React, { useState } from "react";
 
-
 const ApplyJobPage = ({ jobs }) => {
   console.log(jobs);
 
- const [applicantInfo, setApplicantInfo] = useState({
+  const [applicantInfo, setApplicantInfo] = useState({
     name: "",
     email: "",
     resume: "",
@@ -190,4 +189,3 @@ export const getStaticProps = async (context) => {
     };
   }
 };
-

@@ -6,8 +6,7 @@ import Topbar from "@/components/UI/Topbar";
 import Searchbar from "@/components/UI/Searchbar";
 import Footer from "@/components/UI/Footer";
 
-const HomePage = ({allJobs}) => {
-
+const HomePage = ({ allJobs }) => {
   return (
     <>
       <Head>
@@ -21,7 +20,7 @@ const HomePage = ({allJobs}) => {
       </Head>
       <div className="bg-white">
         <Topbar />
-        <Searchbar allJobs={allJobs}/>
+        <Searchbar allJobs={allJobs} />
         <Slogan />
         <Partners />
         <Footer />
@@ -60,4 +59,3 @@ export const getStaticProps = async () => {
     };
   }
 };
-

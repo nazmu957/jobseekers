@@ -8,7 +8,8 @@ import {
   FaCalendarAlt,
 } from "react-icons/fa";
 import ReportCard from "./Report";
-const AdminDashboard = () => {
+
+const JobPost = () => {
   const [clickedApplicant, setClickedApplicant] = useState(null);
 
   const handleActionButtonClick = (applicant) => {
@@ -75,6 +76,35 @@ const AdminDashboard = () => {
       setSelectedApplications((prevSelected) => [...prevSelected, selectedJob]);
       window.alert(`Job application with ID ${id} has been added to the list.`);
     }
+  };
+
+  const [job, setJob] = useState({});
+  const handleAddProduct = (event) => {
+    event.preventDefault();
+
+    fetch("http://localhost:5000/jobs", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(job),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          alert("Job added successfully");
+          event.target.reset();
+        }
+      });
+  };
+
+  const handleInputBlur = (event) => {
+    const field = event.target.name;
+    const value = event.target.value;
+
+    const newJob = { ...job };
+    newJob[field] = value;
+    setJob(newJob);
   };
 
   return (
@@ -146,89 +176,76 @@ const AdminDashboard = () => {
         {/* Main Content */}
         <div className="md:col-span-3">
           <h1 className="text-2xl font-bold mb-8 text-[#1F2761] ms-8 mt-3">
-            General Report
+            Post Job
           </h1>
-          <ReportCard />
-          <h1 className="text-2xl font-bold mb-8 text-[#1F2761] ms-8 mt-3">
-            Recent Applications
-          </h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 m-5">
-            {jobApplications.map((job) => (
-              <div key={job.id} className=" p-4 rounded-md">
-                <div key={job.id} className="bg-white p-4 shadow-md rounded-md">
-                  <h2 className="text-lg font-semibold mb-2">{job.position}</h2>
-                  <p className="text-gray-600">{`Applicant: ${job.applicant}`}</p>
-                  <div className="flex justify-between items-center mt-2">
-                    <p> Date: {job.date}</p>
-                    <div className="space-x-2">
-                      <button
-                        className="bg-red-100 p-1 rounded text-xs"
-                        onClick={() => handleDelete(job.id)}
-                      >
-                        Delete
-                      </button>
-                      <button
-                        className="bg-green-100 p-1 rounded text-xs"
-                        onClick={() => handleAddToList(job.id)}
-                      >
-                        Add to List
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-8 p-4">
-            <h2 className="text-2xl font-bold mb-4 text-[#1F2761] ms-5">
-              Selected Applications
-            </h2>
-            <div className="overflow-x-auto">
-              <table className="min-w-full border rounded-md overflow-hidden">
-                <thead className="bg-gray-200">
-                  <tr>
-                    <th className="border p-3">Position</th>
-                    <th className="border p-3">Applicant</th>
-                    <th className="border p-3">Image</th>
-                    <th className="border p-3">Action</th>
-                  </tr>
-                </thead>
-                <tbody className="bg-white">
-                  {selectedApplications.map((selectedJob) => (
-                    <tr key={selectedJob.id}>
-                      <td className="border p-3">{selectedJob.position}</td>
-                      <td className="border p-3">{selectedJob.applicant}</td>
-                      <td className="border p-3">
-                        <div className="flex items-center">
-                          <img
-                            src={selectedJob.img} // Replace with the actual image source
-                            alt={`${selectedJob.applicant}'s Image`}
-                            className="w-8 h-8 rounded-full mr-2"
-                          />
-                          {selectedJob.applicant}
-                        </div>
-                      </td>
-                      <td className="border pe-0">
-                        <button
-                          className={`${
-                            clickedApplicant === selectedJob.applicant
-                              ? "bg-green-500"
-                              : "bg-blue-500"
-                          } text-white text-xs px-3 py-2 rounded ms-7`}
-                          onClick={() =>
-                            handleActionButtonClick(selectedJob.applicant)
-                          }
-                        >
-                          {clickedApplicant === selectedJob.applicant
-                            ? "Confirmed"
-                            : "Action"}
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+          <div className="bg-red-100 py-[4rem]">
+            <div>
+              <h2 className="font-bold text-2xl py-3">Job Added</h2>
+              <form onSubmit={handleAddProduct}>
+                <input
+                  className="border px-3 p-[.2rem] my-[.3rem] rounded"
+                  onBlur={handleInputBlur}
+                  type="number"
+                  placeholder="Job id"
+                  required
+                  name="id"
+                  id=""
+                />
+                <br />
+                <input
+                  className="border px-3 p-[.2rem] my-[.3rem] rounded"
+                  onBlur={handleInputBlur}
+                  type="text"
+                  placeholder="Company Logo Link"
+                  required
+                  name="image_url"
+                  id=""
+                />
+                <br />
+                <input
+                  className="border px-3 p-[.2rem]  my-[.3rem] rounded"
+                  onBlur={handleInputBlur}
+                  type="text"
+                  placeholder="Salary"
+                  required
+                  name="salary"
+                  id=""
+                />
+                <br />
+                <input
+                  className="border px-3 p-[.2rem]  my-[.3rem] rounded"
+                  onBlur={handleInputBlur}
+                  type="text"
+                  placeholder="availability"
+                  required
+                  name="availability"
+                  id=""
+                />
+                <br />
+                <input
+                  className="border px-3 p-[.2rem]  my-[.3rem] rounded"
+                  onBlur={handleInputBlur}
+                  type="text"
+                  placeholder="Location"
+                  required
+                  name="location"
+                  id=""
+                />
+                <br />
+                <input
+                  className="border px-3 p-[.2rem]  my-[.3rem] rounded"
+                  onBlur={handleInputBlur}
+                  type="text"
+                  placeholder="Title"
+                  required
+                  name="title"
+                  id=""
+                />
+                <br />
+                <button className="btn btn-sm mt-3" type="submit">
+                  Post Job
+                </button>
+              </form>
             </div>
           </div>
         </div>
@@ -237,4 +254,4 @@ const AdminDashboard = () => {
   );
 };
 
-export default AdminDashboard;
+export default JobPost;
