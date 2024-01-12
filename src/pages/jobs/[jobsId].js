@@ -29,7 +29,7 @@ const ApplyJobPage = ({ jobs }) => {
     // Show an alert after successful submission
     alert("Application submitted successfully!");
 
-    // Clear the form after submission
+   
     setApplicantInfo({
       name: "",
       email: "",
@@ -46,7 +46,7 @@ const ApplyJobPage = ({ jobs }) => {
           <img className="h-[3rem]" src={jobs?.image_url} alt="Profile" />
 
           <div className="mt-4 sm:mt-0 sm:ml-4 text-center sm:text-left">
-            <p className="text-xl font-semibold text-gray-900">{jobs?.title}</p>
+            <p className="text-xl font-semibold text-gray-900">{jobs?.name}</p>
             <p className="text-sm text-gray-600">Job Title</p>
           </div>
         </div>
@@ -55,7 +55,7 @@ const ApplyJobPage = ({ jobs }) => {
         </div>
         <div className="border-2 m-3 text-black flex justify-between">
           <div className="p-3">
-            <h6 className="font-bold ">{jobs?.title}</h6>
+            <h6 className="font-bold ">{jobs?.name}</h6>
             <span className="text-sm">Salary: ${jobs?.salary}</span>
           </div>
           <div className="mt-4 p-2">
