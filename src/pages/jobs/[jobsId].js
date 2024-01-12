@@ -26,7 +26,6 @@ const ApplyJobPage = ({ jobs }) => {
     // You can perform additional validation and submit the data to your backend
     console.log("Applicant Information:", applicantInfo);
 
-    // Show an alert after successful submission
     alert("Application submitted successfully!");
 
    
