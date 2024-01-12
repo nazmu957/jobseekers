@@ -23,7 +23,7 @@ const ApplyJobPage = ({ jobs }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // You can perform additional validation and submit the data to your backend
+    
     console.log("Applicant Information:", applicantInfo);
 
     alert("Application submitted successfully!");
