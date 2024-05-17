@@ -94,17 +94,17 @@ const LoginForm = () => {
 
             {error && <div className="text-red-500 mt-4">{error}</div>}
 
-            <div className="flex justify-center mt-6">
+            {/* <div className="flex justify-center mt-6">
               <button
                 className="bg-[#1F2761] hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-md mt-3"
                 onClick={handleGoogleSignIn}
               >
                 Sign In with Google
               </button>
-            </div>
+            </div> */}
           </form>
 
-          <p className="text-center text-sm mt-4">
+          <p className="text-center text-sm mt-[2rem]">
             New in our site?{" "}
             <Link href="/RegistrationForm" className="text-[#1F2761] font-bold">
               Create Account
