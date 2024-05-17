@@ -4,15 +4,16 @@ import Card from "./Card";
 const Searchbar = ({ allJobs }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const data = allJobs.data;
-  // console.log(data);
+  //  console.log(data);
 
   const handleInputChange = (e) => {
     setSearchTerm(e.target.value);
   };
 
   const filteredData = data.filter(
+  
     (item) =>
-      item?.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item?.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.salary.includes(searchTerm)
   );
