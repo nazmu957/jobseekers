@@ -30,16 +30,16 @@ const Searchbar = ({ allJobs }) => {
         }}
       >
         <div className="text-center">
-          <h1 className="font-semibold text-4xl pt-[4rem]  text-[#1E2761] font-serif">
+          <h1 className="font-semibold text-2xl sm:text-3xl md:text-4xl pt-10 sm:pt-12 md:pt-16 lg:pt-20 text-[#1E2761] font-serif">
             Empower Your Ambitions, Explore Opportunities!
           </h1>
         </div>
-        <div className="lg:px-[25rem] lg:pt-[0rem] font-serif ms-8 ">
-          <h1 className="font-semibold text-2xl text-[#1E2761] my-5">
+        <div className="px-4 sm:px-8 md:px-16 lg:px-64 pt-6 sm:pt-8 md:pt-10 lg:pt-12 font-serif">
+          <h1 className="font-semibold text-lg sm:text-xl md:text-2xl text-[#1E2761] my-4">
             Find your dream job
           </h1>
           <div
-            className=" rounded p-4  my-5 border-2 "
+            className="rounded p-4 my-5 border-2"
             style={{
               backgroundImage:
                 'url("https://img.freepik.com/free-vector/modern-flowing-blue-wave-banner-background_1035-19862.jpg?w=996&t=st=1704707182~exp=1704707782~hmac=aad696c69164d1280733c9791dbf13c7ad9c10319e5df3dbd92dc2d7df34806b")',
@@ -57,45 +57,45 @@ const Searchbar = ({ allJobs }) => {
               />
             </div>
           </div>
-          <div className="flex justify-between">
-            <div className="flex">
+          <div className="flex flex-wrap justify-between space-y-4 sm:space-y-0">
+            <div className="flex items-center w-full sm:w-auto">
               <img
                 src="https://avatar.cdnpk.net/858392.jpg"
                 alt=""
-                className="w-[2rem] h-[2rem] rounded-full  me-2"
+                className="w-8 h-8 rounded-full mr-2"
               />
               <div>
                 <p className="text-xs">LIVE JOBS</p>
                 <p className="font-semibold text-xs">8,459+</p>
               </div>
             </div>
-            <div className="flex  ">
+            <div className="flex items-center w-full sm:w-auto">
               <img
                 src="https://avatar.cdnpk.net/858392.jpg"
                 alt=""
-                className="w-[2rem] h-[2rem] rounded-full  mx-2 "
+                className="w-8 h-8 rounded-full mx-2"
               />
               <div>
                 <p className="text-xs">COMPANIES</p>
                 <p className="font-semibold text-xs">6854+</p>
               </div>
             </div>
-            <div className="flex  ">
+            <div className="flex items-center w-full sm:w-auto">
               <img
                 src="https://avatar.cdnpk.net/858392.jpg"
                 alt=""
-                className="w-[2rem] h-[2rem] rounded-full  mx-2"
+                className="w-8 h-8 rounded-full mx-2"
               />
               <div>
                 <p className="text-xs">VACANCIES</p>
                 <p className="font-semibold text-xs">4155+</p>
               </div>
             </div>
-            <div className="flex">
+            <div className="flex items-center w-full sm:w-auto">
               <img
                 src="https://avatar.cdnpk.net/858392.jpg"
                 alt=""
-                className="w-[2rem] h-[2rem] rounded-full  mx-2"
+                className="w-8 h-8 rounded-full mx-2"
               />
               <div>
                 <p className="text-xs">NEW JOBS</p>

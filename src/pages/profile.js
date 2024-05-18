@@ -26,12 +26,11 @@ const Profile = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you can add logic to update the user information on the server
-    // For simplicity, we'll just show an alert and clear the form
+    
     alert("User information updated!");
     console.log("Updated User Information:", userInfo);
 
-    // Clear the form by setting the values to an empty string
+   
     setUserInfo((prevInfo) => ({
       ...prevInfo,
       name: "",
