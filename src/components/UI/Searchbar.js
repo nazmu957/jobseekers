@@ -110,115 +110,105 @@ const Searchbar = ({ allJobs }) => {
         {/* Sidebar */}
         <div className="hidden lg:block w-1/4 h-full bg-[#1E2761] text-white ">
           {/* Add your sidebar content here */}
-          <div className="p-5">
+          <div className="p-5 md:p-8 lg:p-10">
             <h2 className="text-lg font-semibold mb-4">QUICK APPLY</h2>
-            <ul>
+            <ul className="space-y-2 md:space-y-3">
               {/* Add your 8 dropdown menu items here */}
-              <li className="mb-2">
+              <li>
                 <a href="#" className="hover:text-blue-500">
                   → Supply Chain/ Procurement (110)
                 </a>
               </li>
-              <li className="mb-2">
+              <li>
                 <a href="#" className="hover:text-blue-500">
                   → Engineer/Architects (315)
                 </a>
               </li>
-              <li className="mb-2">
+              <li>
                 <a href="#" className="hover:text-blue-500">
                   → Accounting/Finance (390)
                 </a>
               </li>
-              <li className="mb-2">
+              <li>
                 <a href="#" className="hover:text-blue-500">
                   → Gen Mgt/Admin (140)
                 </a>
               </li>
-              <li className="mb-2">
+              <li>
                 <a href="#" className="hover:text-blue-500">
                   → IT & Telecommunication (428)
                 </a>
               </li>
-              <li className="mb-2">
+              <li>
                 <a href="#" className="hover:text-blue-500">
                   → Customer Service/Call Centre (122)
                 </a>
               </li>
-              <li className="mb-2">
+              <li>
                 <a href="#" className="hover:text-blue-500">
                   → Security/Support Service (34)
                 </a>
               </li>
-              <li className="mb-2">
+              <li>
                 <a href="#" className="hover:text-blue-500">
                   → Law/Legal (32)
                 </a>
               </li>
-              <li className="mb-2">
+              <li>
                 <a href="#" className="hover:text-blue-500">
                   → Receptionist/ PS (66)
                 </a>
               </li>
-              <li className="mb-2">
+              <li>
                 <a href="#" className="hover:text-blue-500">
                   → Commercial (55)
                 </a>
               </li>
-              <li className="mb-2">
-                <a href="#" className="hover:text-blue-500">
-                  → Customer Service/Call Centre (122)
-                </a>
-              </li>
-              <li className="mb-2">
+              <li>
                 <a href="#" className="hover:text-blue-500">
                   → Education/Training (405)
                 </a>
               </li>
-              <li className="mb-2">
+              <li>
                 <a href="#" className="hover:text-blue-500">
                   → Driving/Motor Technician (15)
                 </a>
               </li>
-              <li className="mb-2">
+              <li>
                 <a href="#" className="hover:text-blue-500">
                   → Medical/Pharma (253)
                 </a>
               </li>
-              <li className="mb-2">
-                <a href="#" className="hover:text-blue-500">
-                  → Driving/Motor Technician (15)
-                </a>
-              </li>
             </ul>
-            <h2 className="text-lg font-semibold mb-4 my-5">MORE LINK</h2>
-            <ul>
+            <h2 className="text-lg font-semibold mb-4 mt-5">MORE LINK</h2>
+            <ul className="space-y-2 md:space-y-3">
               {/* Add your 8 dropdown menu items here */}
-              <li className="mb-2">
+              <li>
                 <a href="#" className="hover:text-blue-500">
                   → Supply Chain/ Procurement (110)
                 </a>
               </li>
-              <li className="mb-2">
+              <li>
                 <a href="#" className="hover:text-blue-500">
                   → Engineer/Architects (315)
                 </a>
               </li>
-              <li className="mb-2">
+              <li>
                 <a href="#" className="hover:text-blue-500">
                   → Accounting/Finance (390)
                 </a>
               </li>
-              <li className="mb-2">
+              <li>
                 <a href="#" className="hover:text-blue-500">
                   → Gen Mgt/Admin (140)
                 </a>
               </li>
-              <li className="mb-2">
+              <li>
                 <a href="#" className="hover:text-blue-500">
                   → IT & Telecommunication (428)
                 </a>
               </li>
-              <li className="mb-2">
+              <li>
                 <a href="#" className="hover:text-blue-500">
                   → Customer Service/Call Centre (122)
                 </a>
