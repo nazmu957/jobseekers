@@ -5,7 +5,7 @@ import { useContext } from "react";
 
 
 const Topbar = () => {
-  // Destructuring user and logOut from the AuthContext
+ 
   const { user, logOut } = useContext(AuthContext);
   return (
     <div className="">

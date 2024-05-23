@@ -19,14 +19,14 @@ const Searchbar = ({ allJobs }) => {
   );
 
   return (
-    <div className="lg:mx-[15rem]">
+    <div className="lg:mx-[0rem]">
       <div
         style={{
           backgroundImage:
             'url("https://img.freepik.com/free-vector/modern-flowing-blue-wave-banner-background_1035-19862.jpg?w=996&t=st=1704707182~exp=1704707782~hmac=aad696c69164d1280733c9791dbf13c7ad9c10319e5df3dbd92dc2d7df34806b")',
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "25rem",
+          height: "32rem",
         }}
       >
         <div className="text-center">
@@ -35,11 +35,11 @@ const Searchbar = ({ allJobs }) => {
           </h1>
         </div>
         <div className="px-4 sm:px-8 md:px-16 lg:px-64 pt-6 sm:pt-8 md:pt-10 lg:pt-12 font-serif">
-          <h1 className="font-semibold text-lg sm:text-xl md:text-2xl text-[#1E2761] my-4">
+          <h1 className="font-semibold text-lg sm:text-xl md:text-2xl text-[#1E2761] my-4 text-center">
             Find your dream job
           </h1>
           <div
-            className="rounded p-4 my-5 border-2"
+            className="rounded p-4 my-5 border-2 mx-[18rem]"
             style={{
               backgroundImage:
                 'url("https://img.freepik.com/free-vector/modern-flowing-blue-wave-banner-background_1035-19862.jpg?w=996&t=st=1704707182~exp=1704707782~hmac=aad696c69164d1280733c9791dbf13c7ad9c10319e5df3dbd92dc2d7df34806b")',
@@ -57,7 +57,7 @@ const Searchbar = ({ allJobs }) => {
               />
             </div>
           </div>
-          <div className="flex flex-wrap justify-between space-y-4 sm:space-y-0">
+          <div className="flex flex-wrap justify-between space-y-4 sm:space-y-0 lg:mx-[18rem]">
             <div className="flex items-center w-full sm:w-auto">
               <img
                 src="https://avatar.cdnpk.net/858392.jpg"
@@ -106,11 +106,11 @@ const Searchbar = ({ allJobs }) => {
         </div>
       </div>
 
-      <div className="flex h-screen">
+      <div className="flex h-[75rem] ">
         {/* Sidebar */}
-        <div className="hidden lg:block w-1/4 h-full bg-[#1E2761] text-white ">
+        <div className="hidden lg:block w-1/4 h-full bg-[#1E2761] text-white  ">
           {/* Add your sidebar content here */}
-          <div className="p-5 md:p-8 lg:p-10">
+          <div className="p-5 md:p-8 lg:p-6 ">
             <h2 className="text-lg font-semibold mb-4">QUICK APPLY</h2>
             <ul className="space-y-2 md:space-y-3">
               {/* Add your 8 dropdown menu items here */}

@@ -3,7 +3,7 @@ import React from "react";
 import { MdOutlineReport } from "react-icons/md";
 import { GrHide } from "react-icons/gr";
 import { IoLocationSharp } from "react-icons/io5";
-import { MdAttachMoney } from "react-icons/md";
+
 
 const Card = ({ name,location,salary,image_url,id }) => {
   
