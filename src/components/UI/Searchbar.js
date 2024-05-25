@@ -34,8 +34,8 @@ const Searchbar = ({ allJobs }) => {
             Empower Your Ambitions, Explore Opportunities!
           </h1>
         </div>
-        <div className="px-4 sm:px-8 md:px-16 lg:px-64 pt-6 sm:pt-8 md:pt-10 lg:pt-12 font-serif">
-          <h1 className="font-semibold text-lg sm:text-xl md:text-2xl text-[#1E2761] my-4 text-center">
+        <div className="px-4 sm:px-8 md:px-16 lg:px-64 pt-6 sm:pt-8 md:pt-10 lg:pt-8 font-serif">
+          <h1 className="font-semibold text-lg sm:text-xl md:text-2xl text-[#1E2761]  text-center">
             Find your dream job
           </h1>
           <div
