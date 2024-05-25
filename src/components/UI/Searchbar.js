@@ -39,7 +39,7 @@ const Searchbar = ({ allJobs }) => {
             Find your dream job
           </h1>
           <div
-            className="rounded p-4 my-5 border-2 mx-[18rem]"
+            className="rounded p-4 my-5 border-2 mx-[18rem] mt-[2.5rem] "
             style={{
               backgroundImage:
                 'url("https://img.freepik.com/free-vector/modern-flowing-blue-wave-banner-background_1035-19862.jpg?w=996&t=st=1704707182~exp=1704707782~hmac=aad696c69164d1280733c9791dbf13c7ad9c10319e5df3dbd92dc2d7df34806b")',
